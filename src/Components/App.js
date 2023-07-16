@@ -58,18 +58,18 @@ const App = () => {
 
   return (
     <div>
-      {auth.id ? <Home /> : <Login />}
+      {/*auth.id ? <Home /> : <Login />*/}
       {
         <div>
           <nav>
-            <Link to="/">Home</Link>
+            <Link to="/products">Books</Link>
             <Link to="/cart">Cart</Link>
-            {!!auth.id && <Link to="/profile">Profile</Link>}
-            <Link to="/products">Products</Link>
             {!!auth.id && auth.admin && (
               <Link to="/products/addproduct">Add Product</Link>
             )}
-            <Link to="/orders">Orders</Link>
+            {!!auth.id && <Link to="/orders">Orders</Link>}
+            {!auth.id && <Link to="/login">Login</Link>}
+            {!!auth.id && <Link to="/profile">Profile</Link>}
           </nav>
           <Routes>
             <Route path="/" element={<ProductsList />} />
@@ -81,6 +81,7 @@ const App = () => {
                 element={<AddShippingAddress />}
               />
             )}
+            <Route path="/login" element={<Login />} />
             <Route path="/products" element={<ProductsList />} />
             <Route path="/products/:id" element={<SingleProduct />} />
             <Route path="/products/:id/reviews" element={<Reviews />} />

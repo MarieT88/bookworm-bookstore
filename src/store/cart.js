@@ -11,6 +11,9 @@ const cart = (state = { lineItems: [] }, action) => {
   // if (action.type === "DELETE_ITEM") {
   //   return action.cart;
   // }
+  if (action.type === "CLEAR_CART") {
+    return { lineItems: [] };
+  }
 
   return state;
 };
@@ -110,11 +113,21 @@ export const deleteItem = (product) => {
       );
       if (lineItem) {
         lineItem.quantity--;
+          if (lineItem.quantity === 0) {
+            cart.lineItems = cart.lineItems.filter(
+              (item) => item.product.id !== product.id
+            );
+          }
       }
       window.localStorage.setItem("cart", JSON.stringify(cart));
       dispatch(fetchCart());
     }
   };
 };
+
+export const clearCart = () => {
+  return { type: "CLEAR_CART" };
+};
+
 
 export default cart;

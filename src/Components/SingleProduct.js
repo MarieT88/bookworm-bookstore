@@ -49,6 +49,7 @@ const SingleProduct = () => {
 
 	return (
 		<div>
+		  <br />
 		  <img src={product.imageUrl} alt={product.title} id="product_image" />
 		  <h3>{product.title}</h3>
 		  <p>{product.author}</p>
