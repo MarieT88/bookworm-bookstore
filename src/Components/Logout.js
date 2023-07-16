@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { logout } from "../store";
+import { logout, clearCart } from "../store";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -10,6 +10,7 @@ const Logout = () => {
   const _logout = (ev) => {
     ev.preventDefault();
     dispatch(logout());
+    dispatch(clearCart()); 
     navigate("/");
   };
 
