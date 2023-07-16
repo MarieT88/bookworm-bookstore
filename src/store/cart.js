@@ -4,19 +4,13 @@ const cart = (state = { lineItems: [] }, action) => {
   if (action.type === "SET_CART") {
     return action.cart;
   }
-  // if (action.type === "ADD_TO_CART") {
-  //   state = { lineItems: [...state.lineItems, action.lineItems] };
-  //   return action.cart ? action.cart : null;
-  // }
-  // if (action.type === "DELETE_ITEM") {
-  //   return action.cart;
-  // }
   if (action.type === "CLEAR_CART") {
     return { lineItems: [] };
   }
 
   return state;
 };
+
 
 const localCart = () => {
   let cart = JSON.parse(window.localStorage.getItem("cart"));

@@ -35,13 +35,6 @@ const App = () => {
 
   const prevAuth = useRef({});
 
-  /*useEffect(() => {
-		if (auth.id) {
-			dispatch(fetchCart());
-			dispatch(fetchReviews());
-		}
-	}, [auth]);*/
-
   useEffect(() => {
     if (!prevAuth.current.id && auth.id) {
       console.log("logged in");
@@ -58,7 +51,6 @@ const App = () => {
 
   return (
     <div>
-      {/*auth.id ? <Home /> : <Login />*/}
       {
         <div>
           <nav>

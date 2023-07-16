@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { logout, clearCart } from "../store";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
+
 const Logout = () => {
+  
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -21,5 +23,6 @@ const Logout = () => {
     </div>
   );
 };
+
 
 export default Logout;
