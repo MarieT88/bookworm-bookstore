@@ -9,15 +9,15 @@ const UpdateAccount = () => {
   const dispatch = useDispatch();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [admin, setIsAdmin] = useState(false);
+  //const [admin, setIsAdmin] = useState(false);
 
   const updateUser = async (ev) => {
     ev.preventDefault();
 
-    await dispatch(updateAuth({ username, password, admin }));
+    await dispatch(updateAuth({ username, password, /*admin */}));
     setUsername("");
     setPassword("");
-    setIsAdmin(false);
+    //setIsAdmin(false);
 
     navigate("/profile");
   };
@@ -39,14 +39,7 @@ const UpdateAccount = () => {
           placeholder="password"
           name="password"
         />
-        <span>
-        <label htmlFor="admin">Become an admin</label>
-        <input
-          type="checkbox"
-          checked={admin}
-          onChange={(ev) => setIsAdmin(ev.target.checked)}
-        />
-        </span>
+
         <button>Update Account</button>
       </form>
       <Link to={"/profile/addaddress"}>Add Shipping Address</Link>
@@ -55,3 +48,21 @@ const UpdateAccount = () => {
 };
 
 export default UpdateAccount;
+
+
+/*
+Admin code
+
+
+
+        <span>
+        <label htmlFor="admin">Become an admin</label>
+        <input
+          type="checkbox"
+          checked={admin}
+          onChange={(ev) => setIsAdmin(ev.target.checked)}
+        />
+        </span>
+
+
+*/

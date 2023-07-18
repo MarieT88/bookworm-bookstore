@@ -21,6 +21,8 @@ import { Link, Routes, Route } from "react-router-dom";
 import AddProduct from "./AddProduct";
 import AddShippingAddress from "./AddShippingAddress";
 import CreateAccount from "./CreateAccount";
+import Logout from "./Logout";
+
 
 const App = () => {
   const { auth } = useSelector((state) => state);
@@ -55,13 +57,13 @@ const App = () => {
         <div>
           <nav>
             <Link to="/">Books</Link>
-            <Link to="/cart">Cart</Link>
             {!!auth.id && auth.admin && (
               <Link to="/products/addproduct">Add Product</Link>
             )}
             {!!auth.id && <Link to="/orders">Orders</Link>}
-            {!auth.id && <Link to="/login">Login</Link>}
             {!!auth.id && <Link to="/profile">Profile</Link>}
+            {!auth.id && <Link to="/login">Login</Link>}
+            {!!auth.id && <Logout />}
           </nav>
           <Routes>
             <Route path="/" element={<Home />} />

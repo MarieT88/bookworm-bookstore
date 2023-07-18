@@ -13,12 +13,6 @@ form > * {
 	margin: 1rem;
 }
 
-nav {
-	display: flex;
-	justify-content: space-around;
-	background-color: #79B379;
-}
-
 img,
 #list-image {
 	width: 150px;
@@ -30,7 +24,12 @@ img,
 	width: 200px;
 	border-radius: 5px;
 }
-
+/*
+nav {
+	display: flex;
+	justify-content: space-around;
+	background-color: #79B379;
+}
 nav > a {
   color: black;
   font-weight: bold;
@@ -41,7 +40,30 @@ nav > a {
 nav > a:hover {
   text-shadow: 2px 2px 4px #3ea33e;
 }
+*/
 
+nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: #79B379;
+  margin-bottom: .5rem;
+  padding: .5rem 0; /* Add some padding to the nav bar */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+
+nav > a {
+  color: black;
+  font-weight: bold;
+  padding: 0.5rem;
+  text-decoration: none;
+  transition: text-shadow 0.3s ease; /* Add a transition effect */
+}
+
+nav > a:hover {
+  text-shadow: 2px 2px 4px #3ea33e;
+  transform: translateY(-2px); /* Move the link slightly upwards on hover */
+}
 
 img,
 #cover-image {
@@ -163,7 +185,7 @@ li > a:hover {
 
 
 img {
-  width: 300px; /* set the desired width */
+  width: 400px; /* set the desired width */
   height: 200px; /* set the desired height */
   object-fit: contain; /* maintain aspect ratio without warping */
 }

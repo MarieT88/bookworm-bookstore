@@ -44,7 +44,7 @@ const SingleProduct = () => {
 	const createLineItem = async (product) => {
 		// await dispatch(addToCart({ product, quantity: 1 }));
 		await dispatch(addToCart(product));
-		navigate("/cart");
+		navigate("/");
 	  };
 
 	return (

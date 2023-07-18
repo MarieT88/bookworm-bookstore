@@ -1,4 +1,4 @@
-import React from "react";
+/* import React from "react";
 import { logout, clearCart } from "../store";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -24,5 +24,30 @@ const Logout = () => {
   );
 };
 
+
+export default Logout;
+*/
+import React from "react";
+import { useDispatch } from "react-redux";
+import { logout, clearCart } from "../store";
+import { useNavigate, Link} from "react-router-dom";
+
+const Logout = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleLogout = (ev) => {
+    ev.preventDefault();
+    dispatch(logout());
+    dispatch(clearCart());
+    navigate("/");
+  };
+
+  return (
+    <Link to="/" onClick={handleLogout}>
+      Logout
+    </Link>
+  );
+};
 
 export default Logout;
