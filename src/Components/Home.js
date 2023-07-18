@@ -1,16 +1,16 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { logout } from '../store';
+import React, { useEffect, useState} from 'react';
+import ProductList from "./ProductList";
+import Cart from "./Cart";
 
 const Home = ()=> {
-  const { auth } = useSelector(state => state);
-  const dispatch = useDispatch();
+  
   return (
-    <div>
-      <h1>Home</h1>
-      <div>
-        <h2>Welcome { auth.username }!!</h2>
-        <button onClick={()=> dispatch(logout())}>Logout</button>
+    <div className ='home-container' >
+      <div className ='cart-container'>
+        <Cart />
+      </div>
+      <div className ='product-list-container'>
+        <ProductList />
       </div>
     </div>
   );

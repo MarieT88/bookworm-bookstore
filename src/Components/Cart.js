@@ -13,12 +13,12 @@ const Cart = () => {
 
   const deleteLineItem = async (product) => {
     await dispatch(deleteItem(product));
-    navigate("/cart");
+    navigate("/");
   };
 
   const createLineItem = async (product) => {
     await dispatch(addToCart(product));
-    navigate("/cart");
+    navigate("/");
   };
 
   const createOrderFromCart = async (cart) => {
@@ -40,20 +40,20 @@ const Cart = () => {
 
    return (
     <div>
-      <h1>Cart</h1>
+      <h2>Cart</h2>
       <ul className="cart">
         {lineItems.map((lineItem, idx) => {
           return lineItem ? (
             <li key={lineItem.id || idx}>
               <span>
-                {lineItem.product.title} - {lineItem.quantity}
+                {lineItem.product.title}  ({lineItem.quantity})
               </span>
               <div className="btn-container">
                 <button onClick={() => deleteLineItem(lineItem.product)}>
-                  remove 1 from cart
+                  -
                 </button>
                 <button onClick={() => createLineItem(lineItem.product)}>
-                  add 1 to cart
+                  +
                 </button>
               </div>
             </li>

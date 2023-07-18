@@ -54,7 +54,7 @@ const App = () => {
       {
         <div>
           <nav>
-            <Link to="/products">Books</Link>
+            <Link to="/">Books</Link>
             <Link to="/cart">Cart</Link>
             {!!auth.id && auth.admin && (
               <Link to="/products/addproduct">Add Product</Link>
@@ -64,7 +64,7 @@ const App = () => {
             {!!auth.id && <Link to="/profile">Profile</Link>}
           </nav>
           <Routes>
-            <Route path="/" element={<ProductsList />} />
+            <Route path="/" element={<Home />} />
             <Route path="/cart" element={<Cart />} />
             {!!auth.id && <Route path="/profile" element={<Profile />} />}
             {!!auth.id && (

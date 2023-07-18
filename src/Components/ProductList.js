@@ -7,6 +7,7 @@ import { addToCart } from "../store/cart";
 import SingleProduct from "./SingleProduct";
 import SearchBar from "./SearchBar";
 
+
 const Products = ({}) => {
   const [product, setProduct] = useState(null);
   const { products, reviews } = useSelector((state) => state);
@@ -26,11 +27,8 @@ const Products = ({}) => {
   }, []);
 
   const createLineItem = async (product) => {
-    //await dispatch(createItem({ product, quantity: 1 }));
-
     await dispatch(addToCart(product));
-
-    navigate("/cart");
+    //navigate("/cart");
   };
 
   //for the searchbar
