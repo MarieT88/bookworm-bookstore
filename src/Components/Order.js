@@ -1,12 +1,27 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useParams,  } from "react-router-dom";
+import { fetchOrders, fetchProducts, fetchCart } from "../store";
 
 const Order = () => {
-  const { orders } = useSelector((state) => state);
+  const { orders, auth } = useSelector((state) => state);
   const { id } = useParams();
+  const dispatch = useDispatch();
+  
+    useEffect(() => {
+    dispatch(fetchOrders());
+    dispatch(fetchProducts());
+    dispatch(fetchCart());
+  }, [auth]);
+  
   const order = orders.find((order) => id === order.id);
-  const lineItems = order.lineItems;
+  
+    if (!order) {
+    return <div>Loading...</div>; // Display a loading indicator
+  }
+
+  // Check if lineItems are available in the order
+  const lineItems = order.lineItems || [];
 
   return (
     <>

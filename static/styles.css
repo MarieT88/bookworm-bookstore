@@ -24,23 +24,6 @@ img,
 	width: 200px;
 	border-radius: 5px;
 }
-/*
-nav {
-	display: flex;
-	justify-content: space-around;
-	background-color: #79B379;
-}
-nav > a {
-  color: black;
-  font-weight: bold;
-  padding: 0.5rem;
-  text-decoration: none;
-}
-
-nav > a:hover {
-  text-shadow: 2px 2px 4px #3ea33e;
-}
-*/
 
 nav {
   display: flex;
