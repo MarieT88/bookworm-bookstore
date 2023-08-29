@@ -34,7 +34,7 @@ const Order = () => {
               <ul>
                 <li>Quantity: {lineItem.quantity}</li>
                 <li>${lineItem.product.price}</li>
-                <li>{lineItem.product.imageURL}</li>
+                <li><img src={lineItem.product.imageUrl} alt={lineItem.product.title} id="product_image" /></li>
               </ul>
             </li>
           );
