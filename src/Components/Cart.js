@@ -65,7 +65,7 @@ const Cart = () => {
       {!isCartEmpty && (
         <div>
           {isLoggedIn ? (
-            <button onClick={handleCheckout}>Create Order</button>
+              <button onClick={handleCheckout}>Place Order</button>
           ) : (
             <>
               <p>Must be logged in to checkout cart.</p>

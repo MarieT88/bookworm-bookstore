@@ -4,6 +4,7 @@ import { fetchOrders } from "../store";
 import { Link } from "react-router-dom";
 
 const Orders = () => {
+  
   const { orders, auth } = useSelector((state) => state);
 
   const dispatch = useDispatch();
@@ -16,7 +17,7 @@ const Orders = () => {
     <div>
       <h1>Orders</h1>
       <ul>
-        <h2>In-progress</h2>
+        <h2>Orders</h2>
 
         {orders.length > 0
           ? orders.map((order) => {
@@ -28,8 +29,8 @@ const Orders = () => {
                 );
               }
             })
-          : "no orders yet!"}
-        <h2>Completed</h2>
+          : "no itmes yet!"}
+        { /*<h2>Completed</h2>*/ }
         {orders.length > 0
           ? orders.map((order) => {
               if (order.orderStatus) {
